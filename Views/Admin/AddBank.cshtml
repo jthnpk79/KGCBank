@@ -1,0 +1,76 @@
+﻿@model KGCBank.Models.BankModel
+
+@{
+    ViewBag.Title = "AddBank";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="left-section">
+            <div class="left-section-text">
+                <h2>Add Bank</h2>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "name", onfocusout = "Checkname()" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "description", onfocusout = "Checkdescription()" } })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.IFSC, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.IFSC, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "ifsc", onfocusout = "Checkifsc()" } })
+                                @Html.ValidationMessageFor(model => model.IFSC, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "phone", onfocusout = "Checkphone()" } })
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" id="button" class="form-sign-in-button" onclick="Checkvalidation()" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="right-section">
+
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-addbank.js"></script>
+<script src="~/Content/Javascript/script-preventback.js"></script>

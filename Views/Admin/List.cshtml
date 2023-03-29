@@ -1,0 +1,71 @@
+﻿@model IEnumerable<KGCBank.Models.BankModel>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+<link href="~/Content/AccountList.css" rel="stylesheet" />
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        @Html.Raw(TempData["InsertMsg"])
+        @Html.Raw(TempData["UpdateMsg"])
+        @Html.Raw(TempData["DeleteMsg"])
+        @Html.Raw(TempData["DeleteErrorMsg"])
+        
+        <div class="lists">
+            <h2>Branches</h2>
+            <div class="addbank">
+                @Html.ActionLink("Add Branch", "AddBank")
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IFSC)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IFSC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+<script src="~/Content/Javascript/script-preventback.js"></script>

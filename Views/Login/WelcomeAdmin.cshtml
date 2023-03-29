@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "WelcomeAdmin";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+<div class="content">
+    <div class="left-section">
+        <div class="left-section-text">
+            @if (Session["Username"] != null)
+            {
+                <h1>Hi, @Session["Username"].ToString()</h1>
+                <h3> Welcome to <span>Banking</span>.. </h3>
+                <p>
+                    Home banking is the practice of conducting banking transactions from home rather than at branch locations.
+                    Home banking includes mobile banking, web banking, banking over the telephone, and banking by mail.
+                    Saving time and reducing physical risks are the main benefits of home banking.
+                </p>
+            }
+            else
+            {
+                Response.Redirect("Index");
+            }
+        </div>
+        <div class="right-section">
+
+        </div>
+        <script src="~/Content/Javascript/script-preventback.js"></script>
+    </div>
+</div>
+<script src="~/Content/Javascript/script-session.js"></script>

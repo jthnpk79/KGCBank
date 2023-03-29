@@ -1,0 +1,110 @@
+﻿@model KGCBank.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+<link href="~/Content/Details.css" rel="stylesheet" />
+
+<div class="content">
+    <div class="lists">
+        <h2>Details</h2>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Firstname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Lastname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Lastname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Dateofbirth)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Dateofbirth)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phonenumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phonenumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.City)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.City)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.State)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.State)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Pincode)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Pincode)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Username)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Username)
+                </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "List")
+        </p>
+    </div>
+</div>
+<script src="~/Content/Javascript/script-preventback.js"></script>

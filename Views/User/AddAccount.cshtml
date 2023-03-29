@@ -1,0 +1,90 @@
+﻿@model KGCBank.Models.AccountModel
+
+@{
+    ViewBag.Title = "AddAccount";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+    <link href="~/Content/user-dashboards.css" rel="stylesheet" />
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        @Html.Raw(TempData["InsertMsg"])
+        <div class="left-section">
+            <div class="form-header">
+                <h2>Add Account</h2>
+            </div>
+            @using (Html.BeginForm("AddAccount", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AccType, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.AccType, new List<SelectListItem>
+                           {
+                            new SelectListItem{ Text = "Current", Value = "Current" },
+                            new SelectListItem{ Text = "Saving", Value = "Saving" },
+                            }, "----Select Type----", new { @class = "form-control", @id = "acctype", onfocusout = "Checkacctype()" })
+                            <small></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BranchId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.BranchId, new List<SelectListItem>
+                           {
+                            new SelectListItem{ Text = "Calicut", Value = "1" },
+                            new SelectListItem{ Text = "Kochi", Value = "2" },
+                            new SelectListItem{ Text = "Trivandrum", Value = "3" },
+                            new SelectListItem{ Text = "Malappuram", Value = "4" },
+                            }, "---Select Branch---", new { @class = "form-control", @id = "branchid", onfocusout = "Checkbranchid()" })
+                            <small></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.File, new { htmlAttributes = new { @class = "form-control", @type = "file" } })
+                            @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger", @id = "file", onfocusout = "Checkfile()" })
+                            <small></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="form-sign-in-button" id="button" onclick="Checkvalidation()" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 text-success">
+                            @ViewBag.FileStatus
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="right-section">
+
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-addaccount.js"></script>
+<script src="~/Content/Javascript/script-preventback.js"></script>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+

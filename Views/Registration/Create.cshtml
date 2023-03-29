@@ -1,0 +1,143 @@
+﻿@model KGCBank.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Sign up";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+    <link href="~/Content/Sign_up.css" rel="stylesheet" />
+}
+<div class="content">
+    @Html.Raw(TempData["InsertMsg"])
+    @Html.Raw(TempData["InsertErrorMsg"])
+    <div class="left-section">
+        <img src="~/Content/Images/Sign up.png" class="background-sign-up" alt="sign up">
+    </div>
+    <div class="right-section">
+        <div class="form2-header">
+            <h2>Sign Up</h2>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <!--Input fields-->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "fname", @onfocusout = "Checkfirstname()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Lastname, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "lname", @onfocusout = "Checklastname()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Dateofbirth, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Dateofbirth, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "dob", @onfocusout = "Checkdob()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Gender, new List<SelectListItem>
+                       {
+                        new SelectListItem{ Text = "Male", Value = "Male" },
+                        new SelectListItem{ Text = "Female", Value = "Female" },
+                        }, "-----Select Gender-----", new { @class = "form-control", @id = "gender", @onfocusout = "Checkgender()" })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Phonenumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Phonenumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "phone", @onfocusout = "Checkphone()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "email", @onfocusout = "Checkemail()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "address", @onfocusout = "Checkaddress()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "city", @onfocusout = "Checkcity()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "state", @onfocusout = "Checkstate()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Pincode, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Pincode, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "pincode", @onfocusout = "Checkpincode()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "username", @onfocusout = "Checkusername()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "password", @onfocusout = "Checkpassword()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Confirmpassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Confirmpassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "confirmpassword", @onfocusout = "Checkconfirmpassword()" } })
+                        <small></small>
+                    </div>
+                </div>
+
+                <!--Submit button-->
+                <input type="submit" value="Sign Up" id="button" class="form-sign-up-button" onclick="Checkvalidation()" />
+
+            </div>
+        }
+    </div>
+</div>
+<script src="~/Content/Javascript/script-signup.js"></script>
+

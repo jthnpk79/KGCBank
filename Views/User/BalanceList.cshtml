@@ -1,0 +1,26 @@
+﻿@model IEnumerable<KGCBank.Models.AccountModel>
+
+@{
+    ViewBag.Title = "Balance";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="lists">
+            <h2>@Html.DisplayNameFor(model => model.Balance)</h2>
+            @foreach (var item in Model)
+            {
+                <h2>@Html.DisplayFor(modelItem => item.Balance)</h2>
+            }
+
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-preventback.js"></script>

@@ -1,0 +1,83 @@
+﻿@model KGCBank.Models.transfer
+
+@{
+    ViewBag.Title = "Transfer";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="left-section">
+            <div class="left-section-text">
+
+                @if (ViewBag.text != null)
+                {
+                    <div style="color: #008000">@ViewBag.text</div>
+                }
+
+                <h2>Money Transfer</h2>
+
+                @using (Html.BeginForm("Transfer", "User", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AccountNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.AccountNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "accnumber", onfocusout = "Checkaccnumber()" } })
+                                @Html.ValidationMessageFor(model => model.AccountNumber, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.IFSC, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.IFSC, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "ifsc", onfocusout = "Checkifsc()" } })
+                                @Html.ValidationMessageFor(model => model.IFSC, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AccountHolder, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.AccountHolder, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "accholder", onfocusout = "Checkaccholder()" } })
+                                @Html.ValidationMessageFor(model => model.AccountHolder, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "amount", onfocusout = "Checkamount()" } })
+                                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Transfer" id="button" class="form-sign-in-button" onclick="Checkvalidation()" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="right-section">
+
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-transfer.js"></script>
+<script src="~/Content/Javascript/script-preventback.js"></script>

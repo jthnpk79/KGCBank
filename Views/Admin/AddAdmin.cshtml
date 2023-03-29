@@ -1,0 +1,59 @@
+﻿@model KGCBank.Models.LoginModel
+
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        @Html.Raw(TempData["InsertMsg"])
+        @Html.Raw(TempData["InsertErrorMsg"])
+        <div class="left-section">
+            <div class="left-section-text">
+                <h2>Add Admin</h2>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @id = "username", @onfocusout = "Checkusername()" } })
+                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @id = "password", @onfocusout = "Checkpassword()" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Add" class="btn btn-default" onclick="Checkvalidation()" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="right-section">
+
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+<script src="~/Content/Javascript/script-addadmin.js"></script>
+<script src="~/Content/Javascript/script-preventback.js"></script>

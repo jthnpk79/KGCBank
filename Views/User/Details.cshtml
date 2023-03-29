@@ -1,0 +1,74 @@
+﻿@model KGCBank.Models.AccountModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <h2>Details</h2>
+
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AccNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AccNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Username)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Username)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AccType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AccType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BranchId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BranchId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RegDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RegDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Balance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Balance)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-preventback.js"></script>

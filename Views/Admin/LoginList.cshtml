@@ -1,0 +1,52 @@
+﻿@model IEnumerable<KGCBank.Models.LoginModel>
+
+@{
+    ViewBag.Title = "Admin Log";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="left-section">
+            <div class="left-section-text">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Username)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Role)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Username)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Role)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "AddAdmin", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <div class="right-section">
+
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-preventback.js"></script>

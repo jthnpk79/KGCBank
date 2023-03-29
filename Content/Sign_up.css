@@ -1,0 +1,120 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+body {
+    margin: 0;
+}
+
+.left-section {
+    width: 30%;
+    float: left;
+    height: 100%;
+}
+
+.right-section {
+    width: 70%;
+    float: left;
+    height: 100%;
+}
+
+.content {
+    height: 700px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.background-sign-up {
+    width: 115%;
+    float: left;
+    padding-top: 150px;
+}
+
+/*Sign up*/
+.form2-header {
+    text-align: center;
+    margin-top: 85px;
+}
+
+    .form2-header h2 {
+        color: #2125a7;
+        font-size: 30px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        text-align: center;
+    }
+
+/*.form-sign-up {
+    position: absolute;
+    padding: 30px 80px;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}*/
+
+.form-horizontal {
+    position: absolute;
+    padding: 10px 80px;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    height: 70px;
+    width: 40%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.94);
+    display: inline-block;
+    padding-inline: 40px;
+}
+
+    .form-group input {
+        height: 100%;
+        width: 100%;
+        border: 1px;
+        background: transparent;
+        outline: none;
+        color: #222;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        border: 2px solid #323130;
+        border-radius: 4px;
+    }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff06af;
+        }
+
+.form-sign-up-button {
+    background-color: #2125a7;
+    border: 1px solid #02080c;
+    border-radius: 4px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+    height: 40px;
+    margin-left: 40px;
+}
+
+.gender-details-box {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 40px;
+}
+
+.smallhidden {
+    visibility: hidden;
+}
+
+.smallshown {
+    visibility: visible;
+    color: red;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}

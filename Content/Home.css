@@ -1,0 +1,98 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+body {
+    margin: 0;
+}
+
+.content {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-image: url('Images/homebg.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:bottom;
+    letter-spacing: 2px;
+}
+
+.left-section {
+    width: 30%;
+    height: 600px;
+    float: left;
+    background-color: transparent;
+    text-shadow: 2px 2px #000000;
+    color: #fff;
+}
+
+.left-section-text {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 30px;
+    padding-top: 150px;
+}
+
+span {
+    color: #4070f4;
+}
+
+.left-section-text p {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.button1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+}
+
+    .button1:hover {
+        background-color: #000000; /* Green */
+        color: white;
+    }
+
+.right-section {
+    width: 70%;
+    height: 600px;
+    float: left;
+    background-color: transparent;
+}
+
+/*Carousel*/
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

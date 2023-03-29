@@ -1,0 +1,123 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+    padding: 15px;
+    overflow: hidden;
+    background-color: #333;
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    z-index: 999;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }
+
+.content {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-image: url('Images/homebg.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    letter-spacing: 1px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.left-section {
+    width: 30%;
+    height: 600px;
+    float: left;
+    background-color: transparent;
+    text-shadow: 1px 1px #000000;
+    color: #fff;
+}
+
+.left-section-text {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 30px;
+    padding-top: 150px;
+}
+
+span {
+    color: #4070f4;
+}
+
+.left-section-text p {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.right-section {
+    width: 70%;
+    height: 140px;
+    float: left;
+    background-color: transparent;
+}
+
+.lists {
+    width: 100%;
+    height: 450px;
+    float: left;
+    background-color: transparent;
+    text-shadow: 1px 1px #000000;
+    color: #fff;
+    margin-left: 30px;
+    padding-top: 130px;
+    font-size: 15px;
+}
+/*Footer*/
+.footer {
+    height: 200px;
+    width: 100%;
+    background-color: lightslategrey;
+    font-family: 'Poppins', sans-serif;
+}
+
+    .footer p {
+        text-align: center;
+        font-size: 15px;
+        color: #fff;
+    }
+
+.footer-logo {
+    width: 5%;
+    padding-top: 50px;
+}
+
+.logo-align {
+    text-align: center;
+    color: #fff;
+}
+
+.smallhidden {
+    visibility: hidden;
+}
+
+.smallshown {
+    visibility: visible;
+    color: red;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}

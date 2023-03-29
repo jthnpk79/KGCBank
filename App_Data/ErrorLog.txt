@@ -1,0 +1,60 @@
+3/22/2023 5:44:16 PM: Could not find stored procedure 'dbo.validat'.
+3/22/2023 11:37:20 PM: Error in Encode:Object reference not set to an instance of an object.
+3/23/2023 9:12:04 AM: Object reference not set to an instance of an object.
+3/23/2023 9:46:29 AM: Object reference not set to an instance of an object.
+3/23/2023 11:26:57 AM: Object reference not set to an instance of an object.
+3/23/2023 11:33:23 AM: Object reference not set to an instance of an object.
+3/23/2023 11:33:30 AM: Object reference not set to an instance of an object.
+3/23/2023 2:57:29 PM: The connection was not closed. The connection's current state is open.
+3/23/2023 2:57:29 PM: Object reference not set to an instance of an object.
+3/23/2023 2:57:55 PM: The connection was not closed. The connection's current state is open.
+3/23/2023 2:57:55 PM: Object reference not set to an instance of an object.
+3/23/2023 3:06:32 PM: Object reference not set to an instance of an object.
+3/23/2023 4:21:37 PM: The connection was not closed. The connection's current state is open.
+3/23/2023 4:21:37 PM: Object reference not set to an instance of an object.
+3/24/2023 10:09:51 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:09:51 AM: Object reference not set to an instance of an object.
+3/24/2023 10:10:11 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:10:11 AM: Object reference not set to an instance of an object.
+3/24/2023 10:12:41 AM: Object reference not set to an instance of an object.
+3/24/2023 10:21:25 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:22:00 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:22:20 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:22:35 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:22:46 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:22:46 AM: Object reference not set to an instance of an object.
+3/24/2023 10:23:10 AM: The connection was not closed. The connection's current state is open.
+3/24/2023 10:23:10 AM: Object reference not set to an instance of an object.
+3/27/2023 5:15:43 PM: Error in Encode:Object reference not set to an instance of an object.
+3/28/2023 11:03:01 AM: Object reference not set to an instance of an object.
+3/28/2023 11:07:01 AM: Object reference not set to an instance of an object.
+3/28/2023 11:11:22 AM: Object reference not set to an instance of an object.
+3/28/2023 4:07:03 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:07:03 PM: Object reference not set to an instance of an object.
+3/28/2023 4:10:52 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:10:52 PM: Object reference not set to an instance of an object.
+3/28/2023 4:11:47 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:11:47 PM: Object reference not set to an instance of an object.
+3/28/2023 4:12:08 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:12:08 PM: Object reference not set to an instance of an object.
+3/28/2023 4:15:27 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:49:14 PM: Procedure or function 'account_list' expects parameter '@username', which was not supplied.
+3/28/2023 4:51:27 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:51:40 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:53:02 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:53:17 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:53:42 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:54:33 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:57:33 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:57:53 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 4:59:54 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 5:15:07 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 5:15:13 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 5:22:14 PM: The connection was not closed. The connection's current state is open.
+3/28/2023 5:58:59 PM: Object reference not set to an instance of an object.
+3/28/2023 5:59:29 PM: Object reference not set to an instance of an object.
+3/28/2023 6:00:14 PM: Object reference not set to an instance of an object.
+3/28/2023 6:02:19 PM: Object reference not set to an instance of an object.
+3/28/2023 6:03:56 PM: Object reference not set to an instance of an object.
+3/28/2023 6:56:01 PM: Could not find stored procedure 'SELECT COUNT(*) FROM Register WHERE Email=@Email OR Username=@Username'.
+3/28/2023 6:57:05 PM: Could not find stored procedure 'SELECT COUNT(*) FROM Register WHERE Email=@Email OR Username=@Username'.

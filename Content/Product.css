@@ -1,0 +1,84 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+body {
+    margin: 0;
+}
+.content1 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-image: url('Images/homeloan2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    color: #000;
+    font-weight: 600;
+}
+.content2 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-image: url('Images/homebg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    text-shadow: 2px 2px #000000;
+    color: #fff;
+    font-weight: 600;
+}
+.content3 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-image: url('Images/vehicleloan.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #000;
+    font-weight: 600;
+}
+
+.left-section {
+    width: 30%;
+    height: 600px;
+    float: left;
+    background-color: transparent;
+}
+
+.left-section-text {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 30px;
+    padding-top: 150px;
+}
+
+span {
+    color: #4070f4;
+}
+
+.left-section-text p {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.button1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+}
+
+    .button1:hover {
+        background-color: #000000; /* Green */
+        color: white;
+    }
+
+.right-section {
+    width: 70%;
+    height: 600px;
+    float: left;
+    background-color: transparent;
+}

@@ -1,0 +1,41 @@
+﻿.content {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.lists {
+}
+
+    .lists h2 {
+        font-size: 32px;
+    }
+
+.dl-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+    .dl-horizontal dt {
+        flex-basis: 30%;
+        font-weight: bold;
+    }
+
+    .dl-horizontal dd {
+        flex-basis: 70%;
+        margin-left: 0;
+    }
+
+.p-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .p-links a {
+        margin-right: 20px;
+        color: #007bff;
+    }
+
+        .p-links a:hover {
+            text-decoration: none;
+        }

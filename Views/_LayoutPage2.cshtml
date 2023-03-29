@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+</head>
+<body>
+    <ul>
+        <li><a class="logo-pic" href="@Url.Action("Index","Home",null)"><img src="~/Content/Images/logo-white.png" alt="logo" width="50" height="30"></a></li>
+        <li>@Html.ActionLink("Home", "WelcomeAdmin", "Login", new { area = "" }, new { @class = "" })</li>
+        <li>@Html.ActionLink("Branches", "List", "Admin", new { area = "" }, new { @class = "" })</li>
+        <li>@Html.ActionLink("Customer Details", "List", "Registration", new { area = "" }, new { @class = "" })</li>
+        <li>@Html.ActionLink("Account Verfication", "AccountList", "Admin", new { area = "" }, new { @class = "" })</li>
+        <li>@Html.ActionLink("Admin Details", "AdminList", "Admin", new { area = "" }, new { @class = "" })</li>
+        <li>@Html.ActionLink("Money Transaction", "Transfer", "Admin", new { area = "" }, new { @class = "" })</li>
+        <li>@Html.ActionLink("Logout", "Logout", "Admin", new { area = "" }, new { @class = "" })</li>
+    </ul>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="footer">
+            <table>
+                <tr class="logo-align">
+                    <td>
+                        <img src="~/Content/Images/phone-call.png" class="footer-logo" alt="telephone">
+                    </td>
+                    <td>
+                        <img src="~/Content/Images/envelope.png" class="footer-logo" alt="mail">
+                    </td>
+                    <td>
+                        <img src="~/Content/Images/marker.png" class="footer-logo" alt="location">
+                    </td>
+                </tr>
+                <tr class="logo-align">
+                    <td>Phone</td>
+                    <td>Email</td>
+                    <td>Location</td>
+                </tr>
+                <tr class="logo-align">
+                    <td>+1800-9895-0123</td>
+                    <td>support@kcgbank.com</td>
+                    <td>Malappuram, Kerala</td>
+                </tr>
+            </table>
+            <hr />
+            <p>&copy; @DateTime.Now.Year - Kerala Co-operative Gramin Bank</p>
+        </div>
+    </footer>
+</body>
+</html>

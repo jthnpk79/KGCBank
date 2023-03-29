@@ -1,0 +1,68 @@
+﻿@model IEnumerable<KGCBank.Models.AccountModel>
+
+@{
+    ViewBag.Title = "AccountList";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="lists">
+            <h2>AccountList</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AccNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AccType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BranchId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RegDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Balance)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BranchId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RegDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Balance)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-preventback.js"></script>

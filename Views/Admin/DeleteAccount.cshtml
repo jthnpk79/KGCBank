@@ -1,0 +1,61 @@
+﻿@model KGCBank.Models.AccountModel
+
+@{
+    ViewBag.Title = "DeleteAccount";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="lists">
+            <h2>Delete</h2>
+
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AccNumber)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AccNumber)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AccType)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AccType)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-preventback.js"></script>

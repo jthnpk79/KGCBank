@@ -1,0 +1,58 @@
+﻿@model IEnumerable<KGCBank.Models.AccountModel>
+
+@{
+    ViewBag.Title = "AccountList";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+<link href="~/Content/AccountList.css" rel="stylesheet" />
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        @Html.Raw(TempData["InsertMsg"])
+        @Html.Raw(TempData["UpdateMsg"])
+        @Html.Raw(TempData["DeleteMsg"])
+        @Html.Raw(TempData["DeleteErrorMsg"])
+        <div class="lists">
+            <div style="overflow-x: auto;">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AccNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AccType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AccNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AccType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "AccountVerification", new { id = item.Id }) | @Html.ActionLink("Delete", "DeleteAccount", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+<script src="~/Content/Javascript/script-preventback.js"></script>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KGCBank.Models.LoginModel>
+
+@{
+    ViewBag.Title = "AdminList";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+<link href="~/Content/AccountList.css" rel="stylesheet" />
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        @Html.Raw(TempData["InsertMsg"])
+        @Html.Raw(TempData["UpdateMsg"])
+        @Html.Raw(TempData["DeleteMsg"])
+        @Html.Raw(TempData["DeleteErrorMsg"])
+        <div class="lists">
+            <h2>Admin Details</h2>
+            <div class="addbank">
+                @Html.ActionLink("Add Admin", "AddAdmin")
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Username)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Username)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Change Password", "ChangePassword", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "DeleteAdmin", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+<script src="~/Content/Javascript/script-preventback.js"></script>

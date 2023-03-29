@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<link href="~/Content/Sign_up.css" rel="stylesheet" />
+<script src="~/Content/Javascript/script-signup.js"></script>
+
+<body>
+    <div class="content">
+        <div class="left-section">
+            <img src="~/Content/Images/Sign up.png" class="background-sign-up" alt="sign up">
+        </div>
+
+        <div class="right-section">
+            <div class="form2-header">
+                <h2>Registration</h2>
+            </div>
+            <form class="form-sign-up" name="form2" id="form-sign-up">
+
+                <div class="form2element">
+                    <input type="text" name="Firstname" placeholder="Firstname" id="fname" onkeyup="Checkfname()">
+                    <small> </small>
+                </div>
+
+                <div class="form2element">
+                    <input type="text" name="Lastname" placeholder="Lastname" id="lname" onkeyup="Checklname()">
+                    <small> </small>
+                </div>
+
+                <div class="form2element">
+                    <input type="date" name="Dateofbirth" placeholder="Date of birth" id="birthdate" onkeyup="Checkdate()">
+                    <small> </small>
+                </div>
+                <div class="form2element">
+                    <input type="text" name="Gender" placeholder="Gender" id="gender" onkeyup="Checkgender()">
+                    <small> </small>
+                </div>
+
+                <div class="form2element">
+                    <input type="number" name="Phonenumber" placeholder="Phone number" id="phone" onkeyup="Checkphone()">
+                    <small> </small>
+                </div>
+
+                <div class="form2element">
+                    <input type="text" name="Email" placeholder="Email" id="email" onkeyup="Checkemail()">
+                    <small> </small>
+                </div>
+                <div class="form2element">
+                    <input type="text" name="Address" placeholder="Address" id="address" onkeyup="Checkaddress()">
+                    <small> </small>
+                </div>
+                <div class="form2element">
+                    <input type="text" name="City" placeholder="City" id="city" onkeyup="Checkcity()">
+                    <small> </small>
+                </div>
+                <div class="form2element">
+                    <input type="text" name="State" placeholder="State" id="state" onkeyup="Checkstate()">
+                    <small> </small>
+                </div>
+                <div class="form2element">
+                    <input type="number" name="Pincode" placeholder="Pincode" id="pincode" onkeyup="Checkpincode()">
+                    <small> </small>
+                </div>
+                <div class="form2element">
+                    <input type="text" name="Username" placeholder="Username" id="username" onkeyup="Checkusername()">
+                    <small> </small>
+                </div>
+                <div class="form2element">
+                    <input type="password" name="Password" placeholder="Password" id="pwd" onkeyup="Checkpassword()">
+                    <small></small>
+                </div>
+
+                <div class="form2element">
+                    <input type="password" name="Confirmpassword" placeholder="Confirm password" id="pwd2" onkeyup="Checkpassword2()">
+                    <small> </small>
+                </div>
+                <button id="button" onclick="Checkvalidation()">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+

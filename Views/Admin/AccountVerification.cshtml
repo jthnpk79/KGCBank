@@ -1,0 +1,77 @@
+﻿@model KGCBank.Models.AccountModel
+
+@{
+    ViewBag.Title = "AccountVerification";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="left-section">
+            <div class="left-section-text">
+                <h2>Account Verification</h2>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AccNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.AccNumber, new { htmlAttributes = new { @class = "form-control", @id = "AccNumber", @onfocusout = "Checkaccnumber()" } })
+                                @Html.ValidationMessageFor(model => model.AccNumber, "", new { @class = "text-danger" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AccType, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.AccType, new List<SelectListItem>
+                           {
+                            new SelectListItem{ Text = "Current", Value = "Current" },
+                            new SelectListItem{ Text = "Savings", Value = "Savings" },
+                            }, "-----Select Type-----", new { @class = "form-control", @id = "AccType", @onfocusout = "Checkacctype()" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.Status, new List<SelectListItem>
+                           {
+                            new SelectListItem{ Text = "Approved", Value = "Approved" },
+                            new SelectListItem{ Text = "Pending", Value = "Pending" },
+                            }, "-----Select Type-----", new { @class = "form-control", @id = "Status", @onfocusout = "Checkstatus()" })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btn-default" id="button" onclick="Checkvalidation()" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="right-section">
+
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-verification.js"></script>
+<script src="~/Content/Javascript/script-preventback.js"></script>

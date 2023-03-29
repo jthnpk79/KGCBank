@@ -1,0 +1,90 @@
+﻿@model KGCBank.Models.Statement
+
+@{
+    ViewBag.Title = "Statement";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+<link href="~/Content/AccountList.css" rel="stylesheet" />
+
+@if (Session["Username"] != null)
+{
+    <div class="content">
+        <div class="lists">
+            <div style="overflow-x: auto;">
+                @if (ViewData["Wrong dates"] != null)
+                {
+                    <div style="color: #ff0000">@ViewData["wrongdates"]</div>
+                }
+                <h2>Statement</h2>
+                @using (Html.BeginForm("Statement", "User", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "startdate", onfocusout = "Checkstartdate()" } })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @id = "enddate", onfocusout = "Checkenddate()" } })
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Submit" id="button" class="form-sign-in-button" onclick="Checkvalidation()" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if (Model != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Transaction Date
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                        </tr>
+
+                        @foreach (KGCBank.Models.Statemomentum item in Model.StatementList)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TranDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TranType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+<script src="~/Content/Javascript/script-statement.js"></script>
+<script src="~/Content/Javascript/script-preventback.js"></script>
